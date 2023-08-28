@@ -1,0 +1,60 @@
+    def display_video_stream(self,frame):
+        """Read frame from camera and repaint QLabel widget.
+        """
+        def video_1(self,frame):
+            import base64
+            self.frame=frame
+            ret, self.frame = self.capture_1.read()
+            
+            if ret==True:
+                height, width, channels = self.frame.shape
+
+                #prepare the crop
+             #   print(self.x,self.y)
+             #Live cam_1
+                centerX,centerY=int(height/2),int(width/2)
+                radiusX,radiusY= int(self.scale_live_1*height/100),int(self.scale_live_1*width/100)
+                minX,maxX=centerX-radiusX,centerX+radiusX
+                minY,maxY=centerY-radiusY,centerY+radiusY
+            
+                frame_live_cam_1 = self.frame[minX:maxX, minY:maxY]
+                frame_live_cam_1 = cv2.resize(frame_live_cam_1, (width, height)) 
+                frame_live_cam_1 = cv2.cvtColor(frame_live_cam_1, cv2.COLOR_BGR2RGB)
+                frame_live_cam_1 = cv2.flip(frame_live_cam_1, 1)
+                self.image_live_cam_1 = QImage(frame_live_cam_1,frame_live_cam_1.shape[1], frame_live_cam_1.shape[0],frame_live_cam_1.strides[0], QImage.Format_RGB888)
+              #  self.image_label_1.setPixmap(QPixmap.fromImage(image_live_cam_1))
+                self.live_image_label_1.setPixmap(QPixmap.fromImage(self.image_live_cam_1))
+
+            #Live_cam_2
+                centerX,centerY=int(height/2),int(width/2)
+                radiusX,radiusY= int(self.scale_live_2*height/100),int(self.scale_live_2*width/100)
+                minX,maxX=centerX-radiusX,centerX+radiusX
+                minY,maxY=centerY-radiusY,centerY+radiusY
+            
+                frame_live_cam_2 = self.frame[minX:maxX, minY:maxY]
+                frame_live_cam_2 = cv2.resize(frame_live_cam_2, (width, height)) 
+                frame_live_cam_2 = cv2.cvtColor(frame_live_cam_2, cv2.COLOR_BGR2RGB)
+                frame_live_cam_2 = cv2.flip(frame_live_cam_2, 1)
+                self.image_live_cam_2 = QImage(frame_live_cam_2,frame_live_cam_2.shape[1], frame_live_cam_2.shape[0],frame_live_cam_2.strides[0], QImage.Format_RGB888)
+              #  self.image_label_1.setPixmap(QPixmap.fromImage(image_live_cam_1))
+                self.live_image_label_2.setPixmap(QPixmap.fromImage(self.image_live_cam_2))
+                self.label_2.setPixmap(QPixmap.fromImage(self.image_live_cam_2))
+
+
+             #   self.live_image_label_2.setPixmap(QPixmap.fromImage(image_live_cam_1))
+               # 
+              #  self.image_label_3.setPixmap(QPixmap.fromImage(image))
+              #  self.image_label_4.setPixmap(QPixmap.fromImage(image))
+            #  print(image)
+                self.image_glob_1=True
+                self.image_glob_2=True
+                self.image_glob_3=True
+                self.image_glob_4=True
+                self.frame_1=self.frame
+            else:
+                image='G:\work\PySide-Responsive-ui-master\images\download.png'
+                self.image_glob=True
+                self.datalive_image_label_2.setPixmap(QPixmap.fromImage(image))
+                self.datalive_image_label_2.setPixmap(QPixmap.fromImage(image))
+        video_1(self)
+

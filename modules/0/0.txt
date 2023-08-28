@@ -1,0 +1,10 @@
+Slab ID : 0 
+Status : Available 
+Date : 1400-12-05 
+Time : 08:53:01 
+Line : 0 
+Slab Defects : No Defect 
+Thickness : 0 
+Weight : 0 
+Width : 0 
+Length : 0 

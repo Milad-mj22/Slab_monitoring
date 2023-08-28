@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "Splash_Screen_Python_PySide2-master"
+		},
+		{
+			"path": "..\\..\\pythonwork\\image count"
+		},
+		{
+			"path": "..\\..\\web app"
+		},
+		{
+			"path": "..\\abrarvan"
+		},
+		{
+			"path": "..\\abrarvan2"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
